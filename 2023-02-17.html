@@ -40,6 +40,23 @@
       color: #666;
       margin-top: 4px;
     }
+    
+    .header {
+      position: sticky;
+      top: 0;
+      background-color: #C2EEFF;
+      padding: 1em;
+      z-index: 10;
+    }
+    #search {
+      margin-top: 8px;
+      padding: 8px;
+      width: 100%;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+    }
+
     .nav-links {
       margin-top: 2em;
       text-align: center;
@@ -53,7 +70,12 @@
   </style>
 </head>
 <body>
-  <h2>2023-02-17</h2>
+  
+  <div class="header">
+    <h2>2023-02-17</h2>
+    <input type="text" id="search" placeholder="単語を検索…" />
+  </div>
+
   <div class="chat-container">
 <div class="message from-yeonghoon">
       <div class="bubble-name">영훈</div>
@@ -441,5 +463,16 @@
     <a href="2023-02-16.html">← 前の日</a>
     <a href="2023-02-18.html">次の日 →</a>
   </div>
+
+  <script>
+    document.getElementById("search").addEventListener("input", function() {
+      const q = this.value.toLowerCase();
+      document.querySelectorAll(".message").forEach(div => {
+        const text = div.textContent.toLowerCase();
+        div.style.display = text.includes(q) ? "block" : "none";
+      });
+    });
+  </script>
+
 </body>
 </html>
