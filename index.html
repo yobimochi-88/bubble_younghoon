@@ -2,74 +2,75 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>パンフンとのチャットログ</title>
+  <title>ヨンフンバブル保管庫</title>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "Helvetica Neue", sans-serif;
-      background-color: #e5ddd5;
+      background-color: #fff8dc;
+      color: #000;
+      font-family: 'DotGothic16', monospace;
       margin: 0;
-      padding: 1em;
+      padding: 0;
     }
-    .chat-container {
-      max-width: 600px;
+    .container {
+      max-width: 320px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
     }
-    .message {
-      max-width: 70%;
-      padding: 10px 14px;
-      border-radius: 18px;
-      line-height: 1.4;
-      position: relative;
-      font-size: 15px;
+    h1 {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed #666;
+      padding-bottom: 4px;
     }
-    .from-yeonghoon {
-      background-color: #ffffff;
-      align-self: flex-start;
-      border-top-left-radius: 0;
+    .link-list {
+      font-size: 14px;
+      line-height: 1.8;
     }
-    .bubble-name {
-      font-weight: bold;
-      margin-bottom: 4px;
+    .month-toggle {
+      cursor: pointer;
+      color: blue;
+      margin-bottom: 5px;
+      display: inline-block;
     }
-    .translation {
-      font-size: 13px;
-      color: #666;
-      margin-top: 4px;
+    .day-list {
+      display: none;
+      margin-left: 1em;
+    }
+    .day-list a {
+      text-decoration: none;
+      color: blue;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      text-align: center;
+      padding-top: 5px;
     }
   </style>
 </head>
 <body>
-  <h2>📅 2023-02-17 パンフンとのチャットログ</h2>
-  <div class="chat-container">
-    <div class="message from-yeonghoon">
-      <div class="bubble-name">🍞 영훈</div>
-      おもち 기다려줘서 고마워 신나게 놀아보자 ❤
-      <div class="translation">おもち、待ってくれてありがとう。楽しく遊んでみよう ❤</div>
+  <div class="container">
+    <h1>🍞 ヨンフンバブル保管庫 📱</h1>
+    <div class="link-list">
+      <div class="month-toggle" onclick="toggleDays('days-feb')">▶︎ 2023.02</div>
+      <div class="day-list" id="days-feb">
+        └ <a href="2023-02-17.html">2023-02-17</a><br>
+        └ <a href="2023-02-18.html">2023-02-18</a><br>
+      </div>
     </div>
-    <div class="message from-yeonghoon">
-      <div class="bubble-name">🍞 영훈</div>
-      안녕하세요 😄
-      <div class="translation">こんにちは 😄</div>
-    </div>
-    <div class="message from-yeonghoon">
-      <div class="bubble-name">🍞 영훈</div>
-      뭔가 어색한 느낌... ㅎㅎ
-      <div class="translation">なんかぎこちない感じ…ㅎㅎ</div>
-    </div>
-    <div class="message from-yeonghoon">
-      <div class="bubble-name">🍞 영훈</div>
-      3번을 눌러야 보낼수있구나??..
-      <div class="translation">3回押さないと送れないんだね？？</div>
-    </div>
-    <div class="message from-yeonghoon">
-      <div class="bubble-name">🍞 영훈</div>
-      헐 🍞🤍おもち🤍🍞이름이 보여 대박
-      <div class="translation">わっ 🍞🤍おもち🤍🍞って名前が見える！すごい！</div>
+    <div class="footer">
+      💌 あなたは <span style="color:red;">808</span> 人目の訪問者★
     </div>
   </div>
+  <script>
+    function toggleDays(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
